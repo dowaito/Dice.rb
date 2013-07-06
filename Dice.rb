@@ -4,7 +4,7 @@ String.class_eval do
   end
 end
 
-Integer.class_eval do
+Fixnum.class_eval do
   def roll_dice(size)
     value = 0
     self.times do
