@@ -30,12 +30,9 @@ class TestDice < Test::Unit::TestCase
     spread = {}
     (1..100).each do
       x = 1.d6
-      if spread[x] == nil
-        spread[x] = 1
-      else
-        spread[x] = spread[x] += 1
-      end
+      spread.has_key?(x) ? spread[x] += 1 : spread[x] = 1
     end
+
     assert_equal(3, get_average(spread), 
                   "Dice rolls outside of expected average")
   end
